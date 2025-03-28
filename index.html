@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #fff;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        header {
+            background: rgba(22, 33, 62, 0.95);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            float: left;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        #about {
+            margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #00d4ff;
+            bottom: -10px;
+            left: 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: #e0e0e0;
+        }
+
+        .project-card a {
+            color: #00d4ff;
+            text-decoration: none;
+            border: 1px solid #00d4ff;
+            padding: 8px 15px;
+            display: inline-block;
+            margin-top: 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card a:hover {
+            background: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: #fff;
+        }
+
+        footer {
+            background: rgba(22, 33, 62, 0.95);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 0;
+            }
+
+            header h1, nav {
+                float: none;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width760px){
+            .container nav ul{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Krishnakant Tripathi</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section fade-in">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content" style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div class="photo-container" style="flex: 0 0 auto;">
+                    <img src="image.png" alt="kkt" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 3px solid #00d4ff;">
+                </div>
+                <div class="about-text" style="flex: 1; min-width: 300px;">
+                    <p>I am Pursuing my Bachelor's Degree in Computer Science and Engineering with Specialization in Data Science (Dual Degree) at National Institute of Technology Patna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section fade-in">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Calculator</h3>
+                    <p>Calculator using HTML CSS and JS</p>
+                    <a href="calculator.html" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Tic-Tac-Toe</h3>
+                    <p>Tic-Tac-Toe App using HTML CSS and JS.</p>
+                    <a href="tic-tac-toe.html" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>To-Do-List</h3>
+                    <p>To-Do-List App using HTML CSS and JS.</p>
+                    <a href="to-do-list.html" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="krishnakanttripathi@gmail.com">krishnakanttripathi@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>made by Krishnakant  Tripathi</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => observer.observe(element));
+    </script>
+</body>
+</html>
